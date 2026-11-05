@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Material de Construção Neto e Dani — Solicite seu orçamento</title>
+  <meta name="description" content="Material de Construção Neto e Dani - Jardim Bandeirantes, Zona Norte. Areia, Pedra, Tijolinho, Material Elétrico, Hidráulico e Utensílio Doméstico. Solicite orçamento sem compromisso no WhatsApp.">
+  <style>
+    :root {
+      --azul: #1e2da8;
+      --azul-escuro: #17247f;
+      --amarelo: #ffd400;
+      --amarelo-escuro: #f0c400;
+      --verde: #25d366;
+      --verde-dark: #1ebe5d;
+      --texto: #132153;
+      --muted: #5a6180;
+      --cinza: #f4f6ff;
+      --branco: #ffffff;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color:var(--texto); background:var(--branco); line-height:1.6; }
+    .container { max-width:1120px; margin:0 auto; padding:0 20px; }
+    .btn { display:inline-block; padding:14px 28px; border-radius:50px; text-decoration:none; font-weight:800; font-size:16px; transition:.2s; cursor:pointer; border:none; font-family:inherit; }
+    .btn-whatsapp { background:var(--verde); color:#fff; box-shadow:0 6px 20px rgba(37,211,102,.35); }
+    .btn-whatsapp:hover { background:var(--verde-dark); transform:translateY(-2px); }
+    .btn-yellow { background:var(--amarelo); color:#17247f; }
+    .btn-yellow:hover { background:var(--amarelo-escuro); transform:translateY(-2px); }
+
+    header { position:sticky; top:0; z-index:50; background:#fff; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+    header .container { display:flex; align-items:center; justify-content:space-between; padding-top:12px; padding-bottom:12px; }
+    .logo { font-size:22px; font-weight:900; color:var(--azul); line-height:1.1; }
+    .logo small { display:block; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--amarelo-escuro); }
+    nav { display:flex; gap:22px; }
+    nav a { color:var(--texto); text-decoration:none; font-weight:700; font-size:14px; }
+    nav a:hover { color:var(--azul); }
+    .header-cta { padding:10px 20px; font-size:14px; }
+
+    .hero { background:linear-gradient(135deg, var(--azul) 0%, #2a3fd6 55%, #1e2da8 100%); color:#fff; padding:80px 20px 90px; position:relative; overflow:hidden; }
+    .hero::after { content:""; position:absolute; right:-80px; bottom:-80px; width:320px; height:320px; background:var(--amarelo); border-radius:50%; opacity:.12; }
+    .hero .badge { display:inline-block; background:var(--amarelo); color:#17247f; padding:7px 18px; border-radius:50px; font-weight:800; font-size:13px; letter-spacing:1px; text-transform:uppercase; }
+    .hero h1 { font-size:46px; line-height:1.1; margin:18px 0 12px; }
+    .hero h1 span { color:var(--amarelo); }
+    .hero p { font-size:18px; opacity:.92; max-width:680px; margin:10px 0 28px; }
+    .hero-actions { display:flex; gap:12px; flex-wrap:wrap; position:relative; z-index:1; }
+    .hero-info { margin-top:28px; display:flex; gap:20px; flex-wrap:wrap; font-size:14px; opacity:.95; position:relative; z-index:1; }
+    .hero-info b { color:var(--amarelo); }
+
+    .stats { background:var(--amarelo); padding:28px 20px; }
+    .stats .container { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; text-align:center; }
+    .stat h3 { font-size:18px; color:#17247f; }
+    .stat p { font-size:13px; color:#3a3f5a; }
+
+    .section { padding:70px 20px; }
+    .section h2 { font-size:32px; text-align:center; margin-bottom:8px; }
+    .section .sub { text-align:center; color:var(--muted); margin-bottom:36px; }
+    .cats { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+    .cat { background:#fff; border:1px solid #e8ebff; border-radius:16px; padding:24px; text-align:center; border-bottom:5px solid var(--amarelo); transition:.2s; box-shadow:0 4px 14px rgba(23,36,127,.05); }
+    .cat:hover { transform:translateY(-4px); box-shadow:0 12px 28px rgba(23,36,127,.12); }
+    .cat .icon { font-size:42px; }
+    .cat h3 { margin:10px 0 6px; font-size:18px; }
+    .cat p { color:var(--muted); font-size:14px; margin-bottom:14px; }
+    .cat .btn { padding:10px 18px; font-size:14px; }
+
+    .ensacados { background:var(--azul-escuro); color:#fff; border-radius:20px; padding:36px 28px; display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; max-width:1120px; margin:0 auto; }
+    .ensacados h3 { font-size:26px; margin-bottom:10px; }
+    .ensacados h3 span { color:var(--amarelo); }
+    .ensacados ul { list-style:none; display:grid; gap:10px; }
+    .ensacados li { background:rgba(255,255,255,.08); padding:12px 16px; border-radius:12px; font-weight:700; display:flex; justify-content:space-between; align-items:center; }
+    .ensacados li span { color:var(--amarelo); }
+
+    .cta-band { background:linear-gradient(135deg, var(--amarelo), #ffe14d); color:#17247f; text-align:center; padding:60px 20px; }
+    .cta-band h2 { font-size:32px; margin-bottom:12px; }
+    .cta-band p { margin-bottom:26px; font-weight:600; }
+
+    .contact { background:var(--cinza); }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .card { background:#fff; border-radius:16px; padding:26px; }
+    .card h3 { margin-bottom:12px; }
+    .card p { color:var(--muted); }
+    footer { background:var(--azul-escuro); color:#fff; padding:34px 20px; text-align:center; font-size:14px; }
+    footer a { color:var(--verde); font-weight:700; text-decoration:none; }
+    .big-phone { font-size:34px; font-weight:900; color:var(--azul); letter-spacing:.5px; display:block; margin:8px 0; text-decoration:none; }
+
+    .whatsapp-float { position:fixed; bottom:20px; right:20px; z-index:99; background:var(--verde); color:#fff; width:62px; height:62px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; text-decoration:none; box-shadow:0 8px 22px rgba(0,0,0,.28); transition:.2s; animation:pulse 2s infinite; }
+    .whatsapp-float:hover { transform:scale(1.08); }
+    @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)} 70%{box-shadow:0 0 0 18px rgba(37,211,102,0)} 100%{box-shadow:0 0 0 0 rgba(37,211,102,0)} }
+    .whatsapp-float::before { content:"Solicitar orçamento"; position:absolute; right:74px; top:50%; transform:translateY(-50%); background:var(--azul-escuro); color:#fff; padding:8px 12px; border-radius:8px; font-size:12px; white-space:nowrap; opacity:0; pointer-events:none; transition:.2s; }
+    .whatsapp-float:hover::before { opacity:1; }
+
+    @media (max-width:800px) {
+      .hero h1 { font-size:32px; }
+      nav { display:none; }
+      .ensacados, .contact-grid { grid-template-columns:1fr; }
+      .big-phone { font-size:26px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">NETO E DANI<small>Material de Construção</small></div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#ensacados">Ensacados</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-whatsapp header-cta" href="#" onclick="abrirWhatsApp();return false;">💬 Orçamento no Zap</a>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="container">
+    <span class="badge">Solicite o orçamento s/ compromisso</span>
+    <h1>Material de Construção<br><span>Neto e Dani</span></h1>
+    <p>Tudo para sua obra em um só lugar: areia, pedra, tijolinho, material elétrico, hidráulico e utensílio doméstico. Atendimento rápido pelo WhatsApp.</p>
+    <div class="hero-actions">
+      <a class="btn btn-whatsapp" href="#" onclick="abrirWhatsApp();return false;">💬 Falar no WhatsApp</a>
+      <a class="btn btn-yellow" href="#produtos">Ver produtos</a>
+    </div>
+    <div class="hero-info">
+      <div>📍 <b>R. Eng. Dolabela, 28</b> — Jardim Bandeirantes (Zona Norte)</div>
+      <div>📱 <b>11 93465-8087</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="stat"><h3>✔ Ensacados</h3><p>Areia, pedra e tijolinho</p></div>
+    <div class="stat"><h3>💡 Elétrico</h3><p>Fiação e materiais</p></div>
+    <div class="stat"><h3>🚰 Hidráulico</h3><p>Canos e conexões</p></div>
+    <div class="stat"><h3>🏠 Doméstico</h3><p>Utensílios para casa</p></div>
+  </div>
+</section>
+
+<section class="section" id="produtos">
+  <div class="container">
+    <h2>Nossas categorias</h2>
+    <p class="sub">Clique em qualquer categoria para pedir orçamento no WhatsApp</p>
+    <div class="cats">
+      <div class="cat"><div class="icon">🏖️</div><h3>Areia Ensacada</h3><p>Areia preparada e ensacada para sua obra.</p><a class="btn btn-whatsapp" href="#" onclick="pedirCategoria('Areia Ensacada');return false;">Pedir orçamento</a></div>
+      <div class="cat"><div class="icon">🪨</div><h3>Pedra Ensacada</h3><p>Pedra de qualidade para construção.</p><a class="btn btn-whatsapp" href="#" onclick="pedirCategoria('Pedra Ensacada');return false;">Pedir orçamento</a></div>
+      <div class="cat"><div class="icon">🧱</div><h3>Tijolinho</h3><p>Tijolinhos para alvenaria e acabamento.</p><a class="btn btn-whatsapp" href="#" onclick="pedirCategoria('Tijolinho');return false;">Pedir orçamento</a></div>
+      <div class="cat"><div class="icon">💡</div><h3>Material Elétrico</h3><p>Fios, cabos, lâmpadas, tomadas e mais.</p><a class="btn btn-whatsapp" href="#" onclick="pedirCategoria('Material Elétrico');return false;">Pedir orçamento</a></div>
+      <div class="cat"><div class="icon">🔧</div><h3>Hidráulico</h3><p>Tubulações, conexões e equipamentos.</p><a class="btn btn-whatsapp" href="#" onclick="pedirCategoria('Hidráulico');return false;">Pedir orçamento</a></div>
+      <div class="cat"><div class="icon">🍳</div><h3>Utensílio Doméstico</h3><p>Utensílios e itens para sua casa.</p><a class="btn btn-whatsapp" href="#" onclick="pedirCategoria('Utensílio Doméstico');return false;">Pedir orçamento</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="ensacados" id="ensacados">
+    <div>
+      <h3><span>TEMOS ENSACADOS</span> prontos para entrega</h3>
+      <p style="opacity:.9;">Não precisa esperar. Já temos areia, pedra e tijolinho ensacados para você retirar ou receber. Chame no WhatsApp e solicite seu orçamento sem compromisso.</p>
+      <br>
+      <a class="btn btn-whatsapp" href="#" onclick="pedirCategoria('Ensacados - Areia, Pedra e Tijolinho');return false;">💬 Solicitar orçamento</a>
+    </div>
+    <ul>
+      <li>Areia Ensacada <span>✔</span></li>
+      <li>Pedra Ensacada <span>✔</span></li>
+      <li>Tijolinho <span>✔</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Precisa de material agora?</h2>
+    <p>Atendimento rápido pelo WhatsApp. Respondemos em minutos.</p>
+    <a class="btn btn-whatsapp" style="background:#17247f;" href="#" onclick="abrirWhatsApp();return false;">💬 Chamar no WhatsApp</a>
+  </div>
+</section>
+
+<section class="section contact" id="contato">
+  <div class="container">
+    <h2>Contato e localização</h2>
+    <p class="sub">Estamos na Zona Norte — solicite seu orçamento agora</p>
+    <div class="contact-grid">
+      <div class="card">
+        <h3>📱 WhatsApp</h3>
+        <a class="big-phone" href="#" onclick="abrirWhatsApp();return false;">11 93465-8087</a>
+        <p> Clique para abrir conversa com mensagem pronta. Fazemos orçamento sem compromisso.</p>
+        <a class="btn btn-whatsapp" href="#" onclick="abrirWhatsApp();return false;">Abrir WhatsApp</a>
+      </div>
+      <div class="card">
+        <h3>📍 Endereço</h3>
+        <p>R. Eng. Dolabela, 28<br>Jardim Bandeirantes — Zona Norte, São Paulo/SP</p>
+        <br>
+        <a class="btn btn-yellow" href="https://www.google.com/maps/search/?api=1&query=R.+Eng.+Dolabela,+28+-+Jardim+Bandeirantes" target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p><strong>Material de Construção Neto e Dani</strong></p>
+    <p>📱 <a href="#" onclick="abrirWhatsApp();return false;">11 93465-8087</a> &nbsp;•&nbsp; 📍 R. Eng. Dolabela, 28 - Jardim Bandeirantes (Zona Norte)</p>
+    <p style="opacity:.7; margin-top:8px;">Solicite o orçamento s/ compromisso</p>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="#" onclick="abrirWhatsApp();return false;" aria-label="WhatsApp">💬</a>
+
+<script>
+  const WHATSAPP_NUMBER = "5511934658087";
+  const MENSAGEM_GERAL = "Olá! Vim pelo site da Material de Construção Neto e Dani. Gostaria de solicitar um orçamento sem compromisso.";
+
+  function abrirWhatsApp(msg) {
+    const texto = encodeURIComponent(msg || MENSAGEM_GERAL);
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${texto}`, "_blank");
+  }
+  function pedirCategoria(categoria) {
+    abrirWhatsApp(`Olá! Vim pelo site da Material de Construção Neto e Dani. Gostaria de pedir um orçamento de: ${categoria}.`);
+  }
+</script>
+</body>
+</html>
